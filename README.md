@@ -1,1 +1,1 @@
-## 🥞 Minimum deposit controller
+# 🦐 Minimum deposit controller
