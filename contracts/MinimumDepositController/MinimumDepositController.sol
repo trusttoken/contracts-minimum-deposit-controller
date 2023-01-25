@@ -7,11 +7,11 @@ import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.s
 import {AccessControlEnumerable} from "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
 import {ILenderVerifier, Status, DepositAllowed} from "../carbon/interfaces/IDepositController.sol";
 import {ITrancheVault} from "../carbon/interfaces/ITrancheVault.sol";
-import {IDepositController} from "./IDepositController.sol";
+import {IMinimumDepositController} from "./IMinimumDepositController.sol";
 
 uint256 constant BASIS_PRECISION = 10000;
 
-contract MinimumDepositController is IDepositController, Initializable, AccessControlEnumerable {
+contract MinimumDepositController is IMinimumDepositController, Initializable, AccessControlEnumerable {
     /// @dev Manager role used for access control
     bytes32 public constant MANAGER_ROLE = keccak256("MANAGER_ROLE");
     ILenderVerifier public lenderVerifier;

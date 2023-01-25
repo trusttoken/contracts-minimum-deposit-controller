@@ -1,0 +1,9 @@
+{
+  "optimism_goerli": {
+    "minimumDepositController": {
+      "txHash": "0x162d7b478390cc8444a7b8564f770e13b67d596bb071a84785945f0afea61f23",
+      "address": "0xb7DaEb7232795C7e59A8CC2fb0e6A1CEe43DBD5F",
+      "multisig": false
+    }
+  }
+}

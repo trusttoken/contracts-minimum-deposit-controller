@@ -10,7 +10,7 @@ import {DepositAllowed} from "../carbon/interfaces/IDepositController.sol";
  * @title Contract for managing deposit related settings
  * @dev Used by TrancheVault contract
  */
-interface IDepositController {
+interface IMinimumDepositController {
     /**
      * @notice Event emitted when new ceiling is set
      * @param newCeiling New ceiling value
