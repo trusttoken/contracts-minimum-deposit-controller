@@ -14,7 +14,7 @@ describe('MinimumDepositController.configure', () => {
   it('changes multiple values', async () => {
     const { depositController } = await loadFixture(minimumDepositControllerFixture)
     const status = PortfolioStatus.Live
-    const depositAllowed = false
+    const depositAllowed = !(await depositController.depositAllowed(status))
 
     await depositController.configure(ceiling, depositFeeRate, minimumDeposit, lenderVerifierAddress, {
       status,
@@ -43,5 +43,25 @@ describe('MinimumDepositController.configure', () => {
     expect(await depositController.depositFeeRate()).to.eq(depositFeeRate)
     expect(await depositController.minimumDeposit()).to.eq(minimumDeposit)
     expect(await depositController.lenderVerifier()).to.eq(lenderVerifierAddress)
+  })
+
+  it('can be called by anyone when not changing values', async () => {
+    const { depositController, other } = await loadFixture(minimumDepositControllerFixture)
+
+    const status = PortfolioStatus.Live
+    const ceiling = await depositController.ceiling()
+    const depositFeeRate = await depositController.depositFeeRate()
+    const minimumDeposit = await depositController.minimumDeposit()
+    const lenderVerifierAddress = await depositController.lenderVerifier()
+    const depositAllowed = await depositController.depositAllowed(status)
+
+    const controllerAsOther = depositController.connect(other)
+
+    expect(
+      await controllerAsOther.configure(ceiling, depositFeeRate, minimumDeposit, lenderVerifierAddress, {
+        status,
+        value: depositAllowed,
+      }),
+    ).not.to.be.reverted
   })
 })
