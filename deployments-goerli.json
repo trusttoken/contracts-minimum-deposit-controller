@@ -1,8 +1,8 @@
 {
   "goerli": {
     "minimumDepositController": {
-      "txHash": "0x6fb8081d4e6128a73c6c3db194bd3acd3966a1af33cb9814c9202d6c1f6d46b3",
-      "address": "0x5e51693fAe780A9Ec7A999F6d46C9935695e4f12",
+      "txHash": "0x1fd568cb6338fa8c26ee4cc0f6a6568a04b44b0788df636f06e14e76f0dd961f",
+      "address": "0xD810708e4A02c8C58e3955510f1c9B77A33fA8B8",
       "multisig": false
     }
   }

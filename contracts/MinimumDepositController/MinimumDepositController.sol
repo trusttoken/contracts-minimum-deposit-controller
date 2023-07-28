@@ -28,13 +28,15 @@ contract MinimumDepositController is IMinimumDepositController, Initializable, A
         address _lenderVerifier,
         uint256 _depositFeeRate,
         uint256 _minimumDeposit,
-        uint256 _ceiling
+        uint256 _ceiling,
+        bool _areLiveDepositsAllowed
     ) external initializer {
         _grantRole(MANAGER_ROLE, manager);
         lenderVerifier = ILenderVerifier(_lenderVerifier);
         depositFeeRate = _depositFeeRate;
         minimumDeposit = _minimumDeposit;
         depositAllowed[Status.CapitalFormation] = true;
+        depositAllowed[Status.Live] = _areLiveDepositsAllowed;
 
         ceiling = _ceiling;
     }

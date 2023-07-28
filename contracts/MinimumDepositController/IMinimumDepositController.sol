@@ -66,13 +66,15 @@ interface IMinimumDepositController {
      * @param _depositFeeRate Deposit fee rate (in BPS)
      * @param _minimumDeposit Minimum deposit value (in assets)
      * @param _ceiling Ceiling value
+     * @param _areLiveDepositsAllowed Value indicating whether deposits should be allowed during live portfolio status
      */
     function initialize(
         address manager,
         address _lenderVerifier,
         uint256 _depositFeeRate,
         uint256 _minimumDeposit,
-        uint256 _ceiling
+        uint256 _ceiling,
+        bool _areLiveDepositsAllowed
     ) external;
 
     /**

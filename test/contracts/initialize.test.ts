@@ -2,6 +2,8 @@ import { expect } from 'chai'
 import { minimumDepositControllerFixture } from 'fixtures/minimumDepositControllerFixture'
 import { PortfolioStatus } from 'fixtures/structuredPortfolioFixture'
 import { setupFixtureLoader } from 'test/setup'
+import { AllowAllLenderVerifier__factory, MinimumDepositController__factory } from 'contracts'
+import { Wallet } from 'ethers'
 
 describe('MinimumDepositController.initialize', () => {
   const loadFixture = setupFixtureLoader()
@@ -48,5 +50,18 @@ describe('MinimumDepositController.initialize', () => {
     for (const { status, defaultValue } of TEST_DATA) {
       expect(await depositController.depositAllowed(status)).to.deep.eq(defaultValue)
     }
+  })
+
+  it('sets deposit allowed in live status based on initialize argument', async () => {
+    const areLiveDepositsAllowed = true
+
+    const { depositController } = await loadFixture(async ([wallet]: Wallet[]) => {
+      const lenderVerifier = await new AllowAllLenderVerifier__factory(wallet).deploy()
+      const depositController = await new MinimumDepositController__factory(wallet).deploy()
+      await depositController.initialize(wallet.address, lenderVerifier.address, 500, 100, 0, areLiveDepositsAllowed)
+      return { depositController }
+    })
+
+    expect(await depositController.depositAllowed(PortfolioStatus.Live)).to.deep.eq(areLiveDepositsAllowed)
   })
 })
