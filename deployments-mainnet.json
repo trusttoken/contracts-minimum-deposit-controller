@@ -1,0 +1,9 @@
+{
+  "mainnet": {
+    "minimumDepositController": {
+      "txHash": "0xf681b55ddeaddd332ab9469332d22f57575aea04e3d61adbaf60bc6b4f638cb9",
+      "address": "0xf9633bD42AC3e54235CA3a6cCC80957f8eefdC16",
+      "multisig": false
+    }
+  }
+}
