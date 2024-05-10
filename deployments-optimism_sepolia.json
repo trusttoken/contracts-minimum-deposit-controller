@@ -1,0 +1,9 @@
+{
+  "optimism_sepolia": {
+    "minimumDepositController": {
+      "txHash": "0xfd411f17306ab8cd71486cc84a78dd5aa13c08ed04078774d7a38b379c001cc2",
+      "address": "0x134D580ce5929235F7B06156f0a68EB5b50383EE",
+      "multisig": false
+    }
+  }
+}
