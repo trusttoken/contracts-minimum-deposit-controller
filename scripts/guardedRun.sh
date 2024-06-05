@@ -2,8 +2,8 @@
 set -eu
 
 # Setting Infura or Alchemy key to use for convenience here
-#export INFURA_KEY="f88abc181a4a45a6bc47bdda05a94944"
-export ALCHEMY_KEY="fbS06B9gi4kYSsliFu_Hj5gamIShXt9I"
+export INFURA_KEY="f88abc181a4a45a6bc47bdda05a94944"
+#export ALCHEMY_KEY="fbS06B9gi4kYSsliFu_Hj5gamIShXt9I"
 
 # Example usage:
 # $ scripts/deployment/guardedRun.sh --network goerli --dry-run

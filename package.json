@@ -38,7 +38,7 @@
     "@types/node": "^17.0.12",
     "chai": "^4.3.6",
     "eslint-config-archblock": "workspace:*",
-    "ethereum-mars": "0.2.6-dev.eb75a27",
+    "ethereum-mars": "0.2.6-dev.b8a1d6a",
     "ethereum-waffle": "4.0.10",
     "ethers": "^5.7.1",
     "hardhat": "^2.15.0",

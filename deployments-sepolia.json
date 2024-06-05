@@ -1,0 +1,9 @@
+{
+  "sepolia": {
+    "minimumDepositController": {
+      "txHash": "0x02beff6c443288f6c7e8a293a8e3fde8423ff60a3496dd15b7cd62b6f99b029c",
+      "address": "0x1b2259dC0f77369b3dbf5baD4Dbe1acb509cF3f4",
+      "multisig": false
+    }
+  }
+}
